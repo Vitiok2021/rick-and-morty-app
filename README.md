@@ -1,4 +1,5 @@
 # Rick and Morty Wiki 🧪
+https://vitiok2021.github.io/rick-and-morty-app/
 
 A comprehensive Single Page Application (SPA) built with **Angular 19** utilizing **The Rick and Morty API**.
 This project demonstrates modern Angular development practices, strictly typed interfaces, and reactive state management.
