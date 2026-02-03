@@ -1,0 +1,23 @@
+<div class="app__action app__action--category">
+  <a
+    routerLink="/character"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="app__btn-character"
+  >
+    Personages
+  </a>
+  <a
+    class="app__btn-location"
+    routerLink="/locations"
+    routerLinkActive="active"
+  >
+    Location
+  </a>
+  <a class="app__btn-episode" routerLink="/episodes" routerLinkActive="active">
+    Episode
+  </a>
+  <a routerLink="/favorites" routerLinkActive="active" class="fav-link"
+    >Favorites</a
+  >
+</div>

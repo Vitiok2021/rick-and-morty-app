@@ -1,0 +1,32 @@
+.app {
+  &__info {
+    position: relative;
+    padding: 15px;
+    div {
+      margin: 0;
+      color: #666;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__name {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  &__air {
+    font-weight: 600;
+    color: #666;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__epis {
+    font-weight: 600;
+    font-size: 14px;
+    color: #969696;
+  }
+}

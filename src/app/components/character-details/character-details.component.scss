@@ -1,0 +1,87 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.back-btn {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #e0e0e0;
+    transform: translateX(-5px); /* Легкий зсув вліво при наведенні */
+  }
+
+  /* Додаємо стрілочку через CSS */
+  &::before {
+    content: "← ";
+  }
+}
+
+.profile-header {
+  display: flex;
+  gap: 30px;
+  position: relative; // 👈 ВАЖЛИВО! Щоб кнопка позиціонувалась відносно цього блоку
+
+  // Адаптив: на мобільних ставимо стовпчиком
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avatar {
+    width: 300px;
+    height: 300px; // Фіксуємо висоту, щоб була гарна форма
+    object-fit: cover; // Щоб фото не розтягувалось
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-info {
+    flex: 1; // Займає весь вільний простір
+
+    h1 {
+      margin-top: 0;
+      font-size: 3rem;
+      color: #333;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin: 10px 0; // Трохи повітря між рядками
+
+      strong {
+        color: #555; // Трохи темніший для заголовків полів
+      }
+    }
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: gray;
+  color: white;
+  margin-bottom: 15px;
+  font-weight: bold; // Жирний текст читається краще
+
+  &.alive {
+    background: #55cc44;
+  }
+  &.dead {
+    background: #d63d2e;
+  }
+}

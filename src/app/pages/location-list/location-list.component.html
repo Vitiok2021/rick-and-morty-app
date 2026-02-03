@@ -1,0 +1,25 @@
+<div class="search-box">
+  <input
+    type="text"
+    placeholder="Search location..."
+    (input)="onSearch($event)"
+    class="search-input"
+  />
+</div>
+
+<ul class="app__cards">
+  @for (loc of locations; track loc.id) {
+    <li
+      class="app__card app__card--location"
+      [routerLink]="['/location', loc.id]"
+    >
+      <app-location-card [location]="loc"></app-location-card>
+    </li>
+  }
+</ul>
+<app-pagination
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (next)="nextPage()"
+  (prev)="prevPage()"
+></app-pagination>

@@ -1,0 +1,48 @@
+.app {
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: sans-serif;
+  }
+  &__title {
+    text-align: center;
+    color: #202329;
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 900;
+  }
+
+  &__action {
+    &--category {
+      margin-bottom: 30px;
+      & .active {
+        background-color: #202329;
+        color: #fff;
+      }
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    a {
+      border: none;
+      background-color: #add8e6;
+      padding: 7px 15px;
+      transition: background-color 0.3s ease 0s;
+      border-radius: 7px;
+      text-transform: uppercase;
+      font-size: 14px;
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          &:not(:disabled) {
+            background-color: #7eafc0;
+          }
+        }
+      }
+    }
+  }
+}

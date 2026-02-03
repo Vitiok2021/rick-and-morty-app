@@ -1,0 +1,108 @@
+// --- Блок пошуку (твоя search-box) ---
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; // Відступ між інпутом, селектом і кнопкою
+  margin: 30px 0; // Відступ зверху і знизу від всього блоку
+  flex-wrap: wrap; // Щоб на мобільному переносилось
+}
+
+// Поле вводу
+.search-input {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 300px; // Фіксована ширина для краси (можна прибрати)
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #ff9800; // Помаранчевий при кліку
+    outline: none;
+  }
+}
+
+// Випадаючий список
+.filter-select {
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+
+  &:focus {
+    border-color: #ff9800;
+    outline: none;
+  }
+}
+
+// Кнопка смітника
+.reset-btn {
+  background-color: #e4d1d1; // Червоний
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 46px; // Квадратна кнопка
+  height: 46px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+
+  &:hover:not(:disabled) {
+    background-color: #d1bbbb; // Темніший червоний
+    transform: scale(1.1); // Трохи збільшується
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+}
+
+// --- Повідомлення про помилку ---
+.error-message {
+  background-color: #ffebee; // Світло-рожевий фон
+  color: #c62828; // Темно-червоний текст
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #ffcdd2;
+  font-weight: bold;
+}
+
+// --- Лоадер ---
+.loader {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #666;
+  margin: 40px 0;
+  font-weight: bold;
+}
+
+// --- Сітка карток (Grid) ---
+.app__cards {
+  display: grid;
+  // Магічна формула адаптивності:
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 0;
+  list-style: none; // Прибираємо крапки списку
+}
+
+// Сама картка (обгортка li)
+.app__card {
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px); // Ефект підняття при наведенні
+  }
+}

@@ -1,0 +1,89 @@
+.container {
+  max-width: 600px; /* Не даємо розтягуватись на весь екран */
+  margin: 3rem auto; /* Центруємо по центру екрана */
+  padding: 0 1rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: #e0e0e0;
+    transform: translateX(-5px); /* Легкий зсув вліво при наведенні */
+  }
+
+  /* Додаємо стрілочку через CSS */
+  &::before {
+    content: "← ";
+  }
+}
+
+.episode-card {
+  position: relative;
+  background: white;
+  border-radius: 16px; /* Закруглені кути */
+  padding: 3rem;
+  text-align: center; /* Текст по центру */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* М'яка тінь */
+  border: 1px solid #eee;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px); /* Піднімається вгору на 5px */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Тінь стає глибшою */
+  }
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+  }
+}
+
+.info {
+  margin-top: 2rem;
+  display: flex; /* Робимо в рядок */
+  justify-content: center;
+  gap: 3rem; /* Відступ між датою і кількістю */
+  border-top: 1px solid #eee; /* Лінія зверху */
+  padding-top: 2rem;
+
+  p {
+    display: flex;
+    flex-direction: column; /* Щоб підпис був під цифрою */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+
+    /* Маленький лайфхак: додаємо підписи через CSS, 
+       щоб не чіпати HTML */
+
+    &:nth-child(1)::after {
+      content: "Air Date";
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: normal;
+      margin-top: 4px;
+    }
+
+    &:nth-child(2)::after {
+      content: "Characters";
+      font-size: 0.8rem;
+      color: #888;
+      font-weight: normal;
+      margin-top: 4px;
+    }
+  }
+}

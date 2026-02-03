@@ -1,0 +1,22 @@
+<div class="container">
+  <a routerLink="/locations" class="back-btn">⬅ Back to Locations</a>
+
+  @if (location) {
+    <div class="location-card">
+      <div class="icon">🪐</div>
+
+      <h1>{{ location.name }}</h1>
+
+      <div class="info">
+        <p><strong>Type:</strong> {{ location.type }}</p>
+
+        <p><strong>Dimension:</strong> {{ location.dimension }}</p>
+
+        <p><strong>Residents count:</strong> {{ location.residents.length }}</p>
+      </div>
+      <app-favorite-btn [id]="location.id" type="location"></app-favorite-btn>
+    </div>
+  } @else {
+    <p>Loading...</p>
+  }
+</div>

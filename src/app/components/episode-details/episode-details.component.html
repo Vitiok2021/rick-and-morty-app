@@ -1,0 +1,15 @@
+<div class="container">
+  <a routerLink="/episodes" class="back-btn">Back to List</a>
+  @if (episode) {
+    <div class="episode-card">
+      <h1>{{ episode.name }}</h1>
+      <div class="info">
+        <p>{{ episode.air_date }}</p>
+        <p>{{ episode.characters.length }}</p>
+      </div>
+      <app-favorite-btn [id]="episode.id" type="episode"></app-favorite-btn>
+    </div>
+  } @else {
+    <p>Loading...</p>
+  }
+</div>

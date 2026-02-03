@@ -1,0 +1,27 @@
+<div class="container">
+  <a routerLink="/character" class="back-btn">Back to List</a>
+  @if (character) {
+    <div class="profile-header">
+      <img [src]="character.image" [alt]="character.name" class="avatar" />
+      <app-favorite-btn [id]="character.id" type="character"></app-favorite-btn>
+
+      <div class="profile-info">
+        <h1>{{ character.name }}</h1>
+
+        <div
+          class="status-badge"
+          [class.dead]="character.status === 'Dead'"
+          [class.alive]="character.status === 'Alive'"
+        >
+          {{ character.status }} - {{ character.species }}
+        </div>
+
+        <p><strong>Gender:</strong> {{ character.gender }}</p>
+        <p><strong>Location:</strong> {{ character.location.name }}</p>
+        <p><strong>Origin:</strong> {{ character.origin.name }}</p>
+      </div>
+    </div>
+  } @else {
+    <p>Loading...</p>
+  }
+</div>

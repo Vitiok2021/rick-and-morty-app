@@ -1,0 +1,15 @@
+<div class="app__action">
+  <button class="app__prev" (click)="onPrev()" [disabled]="currentPage === 1">
+    Prev
+  </button>
+  <div class="app__info">
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+  </div>
+  <button
+    class="app__next"
+    (click)="onNext()"
+    [disabled]="currentPage === totalPages"
+  >
+    Next &rarr;
+  </button>
+</div>

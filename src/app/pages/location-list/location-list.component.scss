@@ -1,0 +1,124 @@
+.app {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    animation: fadeIn 0.8s ease-out;
+  }
+  &__card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    &--location {
+      border-left: 6px solid #ff9800;
+      justify-content: center;
+      min-height: 150px;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+      .app__name {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      p {
+        color: #666;
+        margin: 5px 0;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+          border-left-color: #d84315;
+          background-color: #fffbf0;
+        }
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  &__image {
+  }
+
+  &__info {
+  }
+
+  &__name {
+  }
+
+  &__status {
+  }
+  &__action {
+    span {
+      font-size: 14px;
+      color: gray;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    button {
+      border: none;
+      background-color: #add8e6;
+      padding: 7px 15px;
+      transition: background-color 0.3s ease 0s;
+      border-radius: 7px;
+      text-transform: uppercase;
+      font-size: 14px;
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          &:not(:disabled) {
+            background-color: #7eafc0;
+          }
+        }
+      }
+    }
+  }
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  .search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 20px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: #fff;
+
+    &:focus {
+      border-color: #ff9800; // Помаранчевий
+    }
+  }
+}

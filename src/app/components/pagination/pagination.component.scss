@@ -1,0 +1,35 @@
+.app {
+  &__action {
+    span {
+      font-size: 14px;
+      color: gray;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    button {
+      border: none;
+      background-color: #add8e6;
+      padding: 7px 15px;
+      transition: background-color 0.3s ease 0s;
+      border-radius: 7px;
+      text-transform: uppercase;
+      font-size: 14px;
+      &:not(:disabled) {
+        cursor: pointer;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          &:not(:disabled) {
+            background-color: #7eafc0;
+          }
+        }
+      }
+    }
+  }
+  .info {
+    font-weight: 700;
+    color: #333;
+  }
+}
